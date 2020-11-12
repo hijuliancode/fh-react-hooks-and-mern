@@ -1,6 +1,7 @@
 // Import, export y funciones comunes de arreglos
 
-import heroes, { owners } from '.. /data/heroes'
+// import heroes, { owners } from '../data/heroes'
+import heroes from '../data/heroes'
 
 const getHeroById = (id) => heroes.find( (hero) => hero.id === id )
 
@@ -12,7 +13,11 @@ const getHeroesByOwner = (owner) => heroes.filter( (hero) => hero.owner === owne
 // console.log( getHeroById(4) )
 // console.log( getHeroById(5) ) 
 
-console.log( getHeroesByOwner('DC') )
+// console.log( getHeroesByOwner('DC') )
 
-console.log(owners)
+// console.log( owners )
 
+export {
+    getHeroById,
+    getHeroesByOwner
+}
