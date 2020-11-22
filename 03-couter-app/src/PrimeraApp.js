@@ -3,20 +3,23 @@ import PropTypes from 'prop-types'
 
 // FC
 
-const PrimeraApp = ({ saludo }) => {
+const PrimeraApp = ({ saludo, subtitle }) => {
     
     return (
         <>
             {/* <pre>{ JSON.stringify(persona, null, 2) }</pre> */}
             {/* <hr/> */}
             <h1> {saludo} </h1>
-            <p>Mi primera aplicación</p>
+            <p>{subtitle}</p>
         </>
     );
 }
 
 PrimeraApp.propTypes = {
     saludo: PropTypes.string.isRequired
+}
+PrimeraApp.defaultProps = {
+    subtitle: 'Mi primera aplicación'
 }
 
 export default PrimeraApp;
