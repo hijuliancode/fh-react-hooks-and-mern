@@ -1,13 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 // FC
 
-const PrimeraApp = ({ saludo = 'Hola Mundo'}) => {
-    
-    const persona = {
-        nombre: 'Meraki',
-        edad: 7
-    }
+const PrimeraApp = ({ saludo }) => {
     
     return (
         <>
@@ -17,6 +13,10 @@ const PrimeraApp = ({ saludo = 'Hola Mundo'}) => {
             <p>Mi primera aplicación</p>
         </>
     );
+}
+
+PrimeraApp.propTypes = {
+    saludo: PropTypes.string.isRequired
 }
 
 export default PrimeraApp;
