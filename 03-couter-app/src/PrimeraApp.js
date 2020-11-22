@@ -2,12 +2,13 @@ import React from 'react';
 
 // FC
 
-const PrimeraApp = () => {
-    const saludo = 'Hola Mundo!'
+const PrimeraApp = ({ saludo = 'Hola Mundo'}) => {
+    
     const persona = {
         nombre: 'Meraki',
         edad: 7
     }
+    
     return (
         <>
             {/* <pre>{ JSON.stringify(persona, null, 2) }</pre> */}
