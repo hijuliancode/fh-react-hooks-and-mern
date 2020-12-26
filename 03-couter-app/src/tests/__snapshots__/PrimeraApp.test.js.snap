@@ -2,12 +2,14 @@
 
 exports[`Pruebas en PrimeraApp should mostrar <PrimeraApp/> correctamente 1`] = `
 <Fragment>
-  <h1>
-     
+  <h1
+    class="titulo"
+  >
     Hola, soy Goku
-     
   </h1>
-  <p>
+  <p
+    class="texto"
+  >
     Mi primera aplicación
   </p>
 </Fragment>
