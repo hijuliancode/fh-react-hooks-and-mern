@@ -29,11 +29,22 @@ describe('Pruebas en CounterApp.js', () => {
     expect( valueABuscar ).toBe('11')
   })
 
-  test('should dcrementar con el botón -1', () => {
+  test('should decrementar con el botón -1', () => {
     wrapper.find('button').at(2).simulate('click')
     const valueABuscar = wrapper.find('h2').text().trim()
 
     expect( valueABuscar ).toBe('9')
+  })
+
+  test('Debe reset el valor al valor por defecto', () => {
+    wrapper.find('button').at(0).simulate('click') // Value +1
+    wrapper.find('button').at(0).simulate('click') // Value +1
+
+    wrapper.find('button').at(1).simulate('click') // Reset Value
+
+    const valueABuscar = wrapper.find('h2').text().trim()
+
+    expect( valueABuscar ).toBe('10')
   })
   
   
