@@ -1,0 +1,9 @@
+html, body, #root {
+  height: 100%;
+}
+#root {
+  padding: 12px;
+}
+.input-search .control:first-child {
+  width: 100%;
+}
