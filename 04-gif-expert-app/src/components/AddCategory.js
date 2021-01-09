@@ -1,25 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-export const AddCategory = () => {
+export const AddCategory = ({ setCategories }) => {
+  const inputSearchElm = document.getElementById('searchCategory')
+  const [ inputSearchValue, setInputSearchValue ] = useState('');
+
+  const handleInputChange = (e) => {
+    setInputSearchValue( e.target.value )
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let inputSearch = document.getElementById('searchCategory')
-    let inputSearchValue = inputSearch.value
-
-    if ( inputSearchValue ) {
-      let newCategorie = {
+    if ( inputSearchValue.trim().length > 2 ) {
+      let newCategory = {
         id: guidGenerator(),
         name: inputSearchValue
       }
+      setCategories( cats => [...cats, newCategory] )
 
-      console.log( newCategorie )
-      // setCategories( cats => [...cats, newCategorie] )
-
-      // Reset Input
-      inputSearch.value = ''
-      inputSearch.focus()
+      setInputSearchValue('')
+      inputSearchElm.focus()
     }
   }
 
@@ -32,10 +33,16 @@ export const AddCategory = () => {
 
   return (
     <form onSubmit={ handleSubmit }>
-      <h2>Add Category</h2>
+      <h2 className="mb-1 is-size-6">Add Category</h2>
       <div className="field has-addons mb-4 input-search">
         <div className="control">
-          <input className="input" id="searchCategory" type="text" placeholder="Find a repository" />
+          <input
+            className="input"
+            id="searchCategory"
+            type="text"
+            placeholder="Find a repository"
+            value={ inputSearchValue }
+            onChange={ handleInputChange } />
         </div>
         <div className="control">
           <button className="button is-info" type="submit">
@@ -45,4 +52,8 @@ export const AddCategory = () => {
       </div>
     </form>
   )
+}
+
+AddCategory.propTypes = {
+  setCategories: PropTypes.func.isRequired
 }

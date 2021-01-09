@@ -13,7 +13,7 @@ const GifExpertAppComponent = () => {
       <h2 className="is-size-5-mobile is-size-4 has-text-centered mt-4">Gif Expert App</h2>
       <hr />
 
-      <AddCategory/>
+      <AddCategory setCategories={ setCategories } />
 
       {
         categories.map( (category) => {
