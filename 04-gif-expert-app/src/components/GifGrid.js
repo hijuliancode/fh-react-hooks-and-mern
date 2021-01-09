@@ -11,18 +11,21 @@ export const GifGrid = ({ category }) => {
     <>
       { // If is loading
         loading && (
-          <div className="column">
+          <div class="notification animate__delay-1s is-success animate__animated animate__flash animate__infinite">
             <p>Cargando...</p>
           </div>
         )
       }
-      { // If has images
-        images.map( image => (
-          <div key={ image.id } className="column is-one-quarter">
-            <GifGridItem { ...image } />
-          </div>
-        ))
-      }
+      <h2 className="title is-5 is-capitalized">{ category }</h2>
+      <div className="columns is-multiline is-tablet mb-6">
+        {
+          images.map( image => (
+            <div key={ image.id } className="column is-one-quarter">
+              <GifGridItem { ...image } />
+            </div>
+          ))
+        }
+      </div>
     </>
   )
 }
