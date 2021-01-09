@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 const GifExpertAppComponent = () => {
   const [ categories, setCategories ] = useState([
-    { id: 'OnePunch', name: 'One Punch'},
-    { id: 'SamuraiX', name: 'Samurai X'},
     { id: 'DragonBall', name: 'Dragon Ball'},
   ])
 
@@ -17,7 +16,7 @@ const GifExpertAppComponent = () => {
 
       {
         categories.map( (category) => {
-          return <button key={category.id} className="button is-small is-primary is-outlined mr-1 mb-1">{category.name}</button>
+          return <GifGrid key={ category.id } category={ category.name } />
         } )
       }
 
