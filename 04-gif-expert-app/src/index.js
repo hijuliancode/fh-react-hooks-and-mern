@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import GifExpertAppComponent from "./components/GifExpertApp";
+import GifExpertAppComponent from "./GifExpertApp";
 
 ReactDOM.render(
   <GifExpertAppComponent />,
