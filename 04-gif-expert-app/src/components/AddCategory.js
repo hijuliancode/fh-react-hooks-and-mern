@@ -17,7 +17,7 @@ export const AddCategory = ({ setCategories }) => {
         id: guidGenerator(),
         name: inputSearchValue
       }
-      setCategories( cats => [...cats, newCategory] )
+      setCategories( cats => [newCategory, ...cats] )
 
       setInputSearchValue('')
       inputSearchElm.focus()

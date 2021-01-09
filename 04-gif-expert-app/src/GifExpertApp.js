@@ -14,12 +14,13 @@ const GifExpertAppComponent = () => {
 
       <AddCategory setCategories={ setCategories } />
 
-      {
-        categories.map( (category) => {
-          return <GifGrid key={ category.id } category={ category.name } />
-        } )
-      }
-
+      <div className="columns is-multiline is-tablet">
+        {
+          categories.map( (category) => (
+            <GifGrid key={ category.id } category={ category.name } />
+          ))
+        }
+      </div>
     </div>
   );
 }
