@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useFetchGifs } from '../hooks/useFetchGifs'
 import { GifGridItem } from './GifGridItem'
@@ -11,7 +11,7 @@ export const GifGrid = ({ category }) => {
     <>
       { // If is loading
         loading && (
-          <div class="notification animate__delay-1s is-success animate__animated animate__flash animate__infinite">
+          <div className="notification animate__delay-1s is-success animate__animated animate__flash animate__infinite">
             <p>Cargando...</p>
           </div>
         )

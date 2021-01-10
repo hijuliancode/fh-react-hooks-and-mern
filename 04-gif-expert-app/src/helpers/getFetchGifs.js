@@ -10,6 +10,5 @@ export const getFetchGifs = async ( category ) => {
       externalUrl: `${img.url}/tile`,
     }
   })
-  console.log(gifs);
   return gifs;
 }
