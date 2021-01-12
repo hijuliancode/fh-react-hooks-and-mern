@@ -6,9 +6,9 @@ describe('Test GifGridItem.js', () => {
   let wrapper
 
   let dummyData = {
-    url: '',
-    title: '',
-    externalUrl: ''
+    url: 'https://i.giphy.com/media/0qIdaOZwwr7zfQGXOY/giphy-downsized-medium.gif',
+    title: 'Dragon Ball GIF by TOEI Animation UK',
+    externalUrl: 'https://i.giphy.com/media/0qIdaOZwwr7zfQGXOY/giphy-downsized-medium.gif/tile',
   }
 
   beforeEach(() => {

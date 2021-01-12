@@ -22,5 +22,6 @@ export const GifGridItem = ( { url, title, externalUrl } ) => {
 
 GifGridItem.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  externalUrl: PropTypes.string.isRequired,
 }

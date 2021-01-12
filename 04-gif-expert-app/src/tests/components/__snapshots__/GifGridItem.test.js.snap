@@ -9,13 +9,13 @@ exports[`Test GifGridItem.js Should render <GifGridItem /> 1`] = `
   >
     <a
       className="image is-4by3 animate__animated animate__fadeIn animate__fast"
-      href=""
+      href="https://i.giphy.com/media/0qIdaOZwwr7zfQGXOY/giphy-downsized-medium.gif/tile"
       rel="noreferrer"
       target="_blank"
     >
       <img
-        alt=""
-        src=""
+        alt="Dragon Ball GIF by TOEI Animation UK"
+        src="https://i.giphy.com/media/0qIdaOZwwr7zfQGXOY/giphy-downsized-medium.gif"
       />
     </a>
   </div>
@@ -30,7 +30,9 @@ exports[`Test GifGridItem.js Should render <GifGridItem /> 1`] = `
       >
         <p
           className="title is-4"
-        />
+        >
+          Dragon Ball GIF by TOEI Animation UK
+        </p>
       </div>
     </div>
   </div>
