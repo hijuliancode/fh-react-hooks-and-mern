@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in AddCategory.js should render <AddCategory /> correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h2
+    className="mb-1 is-size-6"
+  >
+    Add Category
+  </h2>
+  <div
+    className="field has-addons mb-4 input-search"
+  >
+    <div
+      className="control"
+    >
+      <input
+        className="input"
+        id="searchCategory"
+        onChange={[Function]}
+        placeholder="Find a repository"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="control"
+    >
+      <button
+        className="button is-info"
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</form>
+`;
