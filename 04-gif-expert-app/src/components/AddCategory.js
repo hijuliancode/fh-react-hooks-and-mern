@@ -6,10 +6,12 @@ export const AddCategory = ({ setCategories }) => {
   const [ inputSearchValue, setInputSearchValue ] = useState('');
 
   const handleInputChange = (e) => {
+    console.log('=> handleInputChange()');
     setInputSearchValue( e.target.value )
   }
 
   const handleSubmit = (e) => {
+    console.log('=> handleSubmit()');
     e.preventDefault();
 
     if ( inputSearchValue.trim().length > 2 ) {
@@ -25,6 +27,7 @@ export const AddCategory = ({ setCategories }) => {
   }
 
   function guidGenerator() { // Globally Unique IDentifier
+    console.log('=> guidGenerator()');
     var S4 = function() {
        return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
     };
