@@ -1,12 +1,14 @@
 import React from 'react'
+import '@testing-library/jest-dom'
 import { shallow } from 'enzyme'
 import { AddCategory }  from '../../components/AddCategory'
 
 describe('Test in AddCategory.js', () => {
   let wrapper;
-  const setCategories = () => {}
+  const setCategories = jest.fn()
 
   beforeEach(() => {
+    jest.clearAllMocks() // Limpiar Mocks en caso de haber
     wrapper = shallow( <AddCategory setCategories={ setCategories } /> )
   })
 
@@ -21,4 +23,11 @@ describe('Test in AddCategory.js', () => {
     // El objeto {} tiene el valor de e // $event
     input.simulate('change', { target: { value: 'Texto Demo e.target.value' } })
   })
+
+  test('should not send the info with submit', () => {
+    wrapper.find('form').simulate('submit', { preventDefault(){} })
+
+    expect( setCategories ).not.toHaveBeenCalled()
+  })
+  
 })
