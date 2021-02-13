@@ -15,6 +15,7 @@ describe('Test in AddCategory.js', () => {
   test('should render <AddCategory /> correctly', () => {
     expect( wrapper ).toMatchSnapshot()
   })
+
   test('test, handleInputChange(), input debe cambiar', () => {
     const input = wrapper.find('#searchCategory')
     
@@ -30,4 +31,23 @@ describe('Test in AddCategory.js', () => {
     expect( setCategories ).not.toHaveBeenCalled()
   })
   
+  test('should call setCategories and clear the input search box', () => {
+    const input = wrapper.find('#searchCategory')
+
+    // 1. Simular el inputChange
+      input.simulate('change', { target: { value: 'IronMan' } })
+    // 2. Simular el Submit del Formulario
+      wrapper.find('form').simulate('submit', { preventDefault(){} })
+      
+    // 3. Se debe de haber llamado el setCategories
+      expect( setCategories ).toHaveBeenCalled()
+      expect( setCategories ).toHaveBeenCalledTimes(1)
+      expect( setCategories ).toHaveBeenCalledWith( expect.any(Function) )
+
+    // 4. El value del input debe de estar vacio ''
+      expect( input.prop('value') ).toBe( '' )
+
+  })
+  
+
 })
