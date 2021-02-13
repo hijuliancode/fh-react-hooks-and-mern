@@ -18,6 +18,7 @@ describe('Test in AddCategory.js', () => {
     
     // Para simular onChange = change
     // Para simular el e (event), e.target.value usamos, {}
+    // El objeto {} tiene el valor de e // $event
     input.simulate('change', { target: { value: 'Texto Demo e.target.value' } })
   })
 })
