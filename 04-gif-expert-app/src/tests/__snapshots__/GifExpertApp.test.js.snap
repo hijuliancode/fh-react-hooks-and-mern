@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in GifExpertApp.js should render <GifExpertApp /> 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="is-size-5-mobile is-size-4 has-text-centered mt-4"
+  >
+    Gif Expert App
+  </h2>
+  <hr />
+  <AddCategory
+    setCategories={[Function]}
+  />
+</div>
+`;
+
+exports[`Test in GifExpertApp.js should render a categories list 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="is-size-5-mobile is-size-4 has-text-centered mt-4"
+  >
+    Gif Expert App
+  </h2>
+  <hr />
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <GifGrid
+    category="Dragon Ball"
+    key="DragonBall"
+  />
+  <GifGrid
+    category="Iron Man"
+    key="IronMan"
+  />
+</div>
+`;

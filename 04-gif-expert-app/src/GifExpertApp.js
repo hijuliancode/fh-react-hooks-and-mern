@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-const GifExpertAppComponent = () => {
-  const [ categories, setCategories ] = useState([
-    { id: 'DragonBall', name: 'Dragon Ball'},
-  ])
+const GifExpertAppComponent = ({ defaultCategories = [] }) => {
+  const [ categories, setCategories ] = useState( defaultCategories )
 
   return (
     <div className="container">
@@ -14,8 +12,8 @@ const GifExpertAppComponent = () => {
 
       <AddCategory setCategories={ setCategories } />
 
-      {
-        categories.map( (category) => (
+      { 
+        categories.map( category => (
           <GifGrid key={ category.id } category={ category.name } />
         ))
       }
