@@ -9,11 +9,17 @@ export const useFetch = ( url ) => {
 
   useEffect(() => {
 
+    setState({ // Reset
+      data: null,
+      error: null,
+      loading: true,
+    });
+
     fetch( url )
       .then( resp => resp.json() )
       .then( data => {
         setState({
-          data,
+          data: data[0],
           error: null,
           loading: false,
         })
