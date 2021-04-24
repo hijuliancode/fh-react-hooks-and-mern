@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { IncrementBtn } from './IncrementBtn'
 
 export const CallBackHook = () => {
@@ -9,6 +9,14 @@ export const CallBackHook = () => {
   const increment = useCallback( (num) => {
     setCounter(c => c + num)
   }, [setCounter] )
+
+  useEffect(() => {
+    // ???
+    // Si el efecto tiene una dependencia, y esa 
+    // dependencia es la función, también se recomienda
+    // usar useCallback, para que no se ejecute el efecto
+    // cuando se renderi:e la función
+  }, [increment])
 
   return (
     <div>
