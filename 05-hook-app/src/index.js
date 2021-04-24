@@ -9,12 +9,13 @@ import ReactDOM from 'react-dom';
 // import { FocusScreen } from './components/04-useRef/FocusScreen';
 // import { RealExampleuseRef } from './components/04-useRef/RealExampleuseRef';
 // import { Layout } from './components/05-useLayoutEffect/LayoutEffect';
-import { Memorize } from './components/06-memos/Memorize';
+// import { Memorize } from './components/06-memos/Memorize';
+import { MemoHook } from './components/06-memos/MemoHook';
 
 ReactDOM.render(
     <>
       <div className="container">
-        <Memorize />
+        <MemoHook />
       </div>
     </>,
   document.getElementById('root')
