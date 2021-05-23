@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useState } from 'react';
 
 export const useForm = (initialState = {}) => {
-  const [ values, setValues ] = useState(initialState)
+  const [values, setValues] = useState(initialState);
 
-  const handleInputChante = ({target}) => {
+  const handleInputChante = ({ target }) => {
     setValues({
       ...values,
-      [target.name]: [target.value]
-    })
-  }
+      [target.name]: target.value,
+    });
+  };
 
-  return [ values, handleInputChante ]
-}
+  const reset = () => {
+    setValues(initialState);
+  };
+
+  return [values, handleInputChante, reset];
+};

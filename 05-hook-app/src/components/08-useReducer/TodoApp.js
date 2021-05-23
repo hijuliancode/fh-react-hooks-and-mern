@@ -1,28 +1,36 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
+import { useForm } from '../../hooks/useForm';
 import './styles.css';
 import { todoReducer } from './todoReducer';
 
-const initialState = [
-  {
-    id: new Date().getTime(),
-    desc: 'Aprender React',
-    done: false,
-  },
-];
+const init = () => {
+  return JSON.parse(localStorage.getItem('todos')) || []
+}
+
 
 export const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initialState);
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
 
-  console.log(todos);
+  const [{ description }, handleInputChange, reset] = useForm({
+    description: '',
+  });
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
+
+  console.log(description);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Nueva Tarea');
+    if (description.trim().length <= 0) {
+      return;
+    }
 
     const newTodo = {
       id: new Date().getTime(),
-      desc: 'Aprender React Native',
+      desc: description,
       done: false,
     };
 
@@ -31,8 +39,20 @@ export const TodoApp = () => {
       payload: newTodo,
     };
 
-    dispatch(action);
+    dispatch(action); // Es una funcion a la cual le mandamos una acción y ella sabe a que reducer debe enviar la información y cuando cambie el state va a redibujar lo que cambie
+    reset();
   };
+
+  const removeTask = (e, todo) => {
+    e.preventDefault()
+
+    const action = {
+      type: 'remove',
+      payload: todo
+    }
+
+    dispatch(action)
+  }
 
   return (
     <div>
@@ -48,7 +68,7 @@ export const TodoApp = () => {
                 <p>
                   {i + 1}. {todo.desc}
                 </p>
-                <button className="btn btn-danger">X</button>
+                <button onClick={(e) => removeTask(e, todo)} className="btn btn-danger">X</button>
               </li>
             ))}
           </ul>
@@ -62,7 +82,9 @@ export const TodoApp = () => {
               name="description"
               className="form-control"
               placeholder="Aprender ..."
-              autocomplete="off"
+              autoComplete="off"
+              value={description}
+              onChange={handleInputChange}
             />
             <button
               type="submit"
