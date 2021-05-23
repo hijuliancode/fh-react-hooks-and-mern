@@ -43,12 +43,12 @@ export const TodoApp = () => {
     reset();
   };
 
-  const removeTask = (e, todo) => {
+  const handleRemoveTask = (e, todoId) => {
     e.preventDefault()
 
     const action = {
       type: 'remove',
-      payload: todo
+      payload: todoId
     }
 
     dispatch(action)
@@ -68,7 +68,7 @@ export const TodoApp = () => {
                 <p>
                   {i + 1}. {todo.desc}
                 </p>
-                <button onClick={(e) => removeTask(e, todo)} className="btn btn-danger">X</button>
+                <button onClick={(e) => handleRemoveTask(e, todo.id)} className="btn btn-danger">X</button>
               </li>
             ))}
           </ul>
