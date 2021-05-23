@@ -19,7 +19,7 @@ import { MainApp } from './components/09-useContext/MainApp';
 
 ReactDOM.render(
   <>
-    <div className="container">
+    <div className="">
       <MainApp />
     </div>
   </>,
